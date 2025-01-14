@@ -1,18 +1,20 @@
-import React from 'react';
-import { Calendar as CalendarIcon } from 'lucide-react';
+import React from "react";
+import { Calendar as CalendarIcon } from "lucide-react";
 
 const Calendar = () => {
   const today = new Date();
   const day = today.getDate();
-  const month = today.toLocaleString('default', { month: 'long' });
+  const month = today.toLocaleString("default", { month: "long" });
+  const shortMonth = today.getMonth() + 1; // Numeric month (1-12)
   const year = today.getFullYear();
 
   return (
     <div className="bg-white rounded-lg shadow-md p-2 sm:p-3 md:p-4 mb-3 sm:mb-4 md:mb-6 w-full max-w-sm mx-auto">
       <div className="bg-gray-100 rounded-md p-1.5 sm:p-2 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center space-x-1 sm:space-x-2">
-        <CalendarIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+        <CalendarIcon className="hidden sm:block w-5 h-5 md:w-6 md:h-6" />
         <h2 className="font-semibold text-sm sm:text-base md:text-lg">
-          {`${day} ${month} ${year}`}
+          <span className="block sm:hidden">{`${day}-${shortMonth}-${year}`}</span>
+          <span className="hidden sm:block">{`${day} ${month} ${year}`}</span>
         </h2>
       </div>
       <ul className="space-y-1 sm:space-y-1.5 md:space-y-2">
