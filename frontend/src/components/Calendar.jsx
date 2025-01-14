@@ -11,7 +11,8 @@ const Calendar = () => {
   return (
     <div className="bg-white rounded-lg shadow-md p-2 sm:p-3 md:p-4 mb-3 sm:mb-4 md:mb-6 w-full max-w-sm mx-auto">
       <div className="bg-gray-100 rounded-md p-1.5 sm:p-2 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center space-x-1 sm:space-x-2">
-        <CalendarIcon className="hidden sm:block w-5 h-5 md:w-6 md:h-6" />
+        <CalendarIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+        {/* Adjust date format based on screen size */}
         <h2 className="font-semibold text-sm sm:text-base md:text-lg">
           <span className="block sm:hidden">{`${day}-${shortMonth}-${year}`}</span>
           <span className="hidden sm:block">{`${day} ${month} ${year}`}</span>
